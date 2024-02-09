@@ -1,0 +1,50 @@
+
+section {
+    position: relative;
+}
+.swiper-button{
+    background: #fff none repeat scroll 0 0;
+  border: 2px solid #eeeeee;
+  color: #a6a6a6;
+  font-weight: 700;
+  left: -30px;
+  line-height: 20px;
+  margin-top: -43px;
+  position: absolute;
+  top: 50%;
+  width: 35px;
+  z-index: 999;
+  transition: all 0.5s ease 0s;
+}
+.but-next {
+    left: auto;
+    right: -30px
+}
+.swiper-button:hover {
+  background: #C8A165 none repeat scroll 0 0;
+  border: 2px solid #C8A165;
+  color: #fff;
+}
+.swiper-button-disabled {
+    background: #3a382e none repeat scroll 0 0;
+}
+.swiper-button-disabled:hover{
+    background: #3a382e none repeat scroll 0 0;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+.swiper-wrapper > div {
+    padding-left: 15px;
+    padding-right: 15px;
+
+}
+.swiper-slide {
+    text-align: center;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

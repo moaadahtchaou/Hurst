@@ -1,0 +1,43 @@
+.cart-plus-minus-Edit {
+    background: #f6f6f6 none repeat scroll 0 0;
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    text-align: center;
+    width: 33%;
+  }
+
+.Editbutton {
+    cursor: pointer;
+    float: left;
+    font-size: 20px;
+    position: relative;
+    width: 33.3333%;
+  }
+
+
+.cart-plus-minus-Edit-box {
+    background: #f6f6f6 none repeat scroll 0 0 !important;
+    float: left;
+    font-size: 16px;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center;
+    width: 33.33% !important;
+  }
+
+
+.decbutton.Editbutton::before, .incbutton.Editbutton::before {
+    background: #999;
+    content: "";
+    height: 14px;
+    position: absolute;
+    right: 0;
+    top: 15px;
+    width: 1px;
+  }
+
+  .incbutton.Editbutton::before {
+    left: 0;
+  }
