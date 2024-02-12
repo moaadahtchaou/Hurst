@@ -2,7 +2,7 @@ import {GetAllProducts,RefreshCart,addToCart} from "../Start.js"
 //Refresh Cart
 RefreshCart()
 //filter
-let filter={"Categories":[],"Price":[],"Color":[],"Size":[]}
+let filter={"Categories":[],"Price":[],"Color":[]}
 // Add style For Minus Plus button
 const file=location.pathname.split("/")
 file.pop()
@@ -166,6 +166,13 @@ const Pagination = (products,numpage)=>{
     const start=end-12
     const newproducts=products.slice(start,end)
     Paginationhtml(newproducts)
+    //Add Event Listener To Cart Button
+    let Carts= document.querySelectorAll("a[title='Add To Cart']")
+    Carts.forEach((Cart)=>{
+                let id=parseInt(Cart.getAttribute("id"))
+                Cart.addEventListener("click" ,()=>{addToCart(newproducts.filter((product)=> product.id ===id)[0],1)} )
+    })
+
 }
 
 const Paginationhtml=(products)=>{
@@ -215,7 +222,7 @@ const Paginationhtml=(products)=>{
             <a href="wishlist.html" data-bs-toggle="tooltip" data-placement="top" title="Wishlist"><i class="zmdi zmdi-favorite-outline"></i></a>
             <a href="#" data-bs-toggle="modal" data-bs-target="#productModal" title="Quick View"><i class="zmdi zmdi-zoom-in"></i></a>
             <a href="#" data-bs-toggle="tooltip" data-placement="top" title="Compare"><i class="zmdi zmdi-refresh"></i></a>
-            <a href="cart.html" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
+            <a href="#" data-bs-toggle="tooltip" data-placement="top" id=${product.id} title="Add To Cart"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
         </div>
     </div>
 </div>

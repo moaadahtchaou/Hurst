@@ -77,10 +77,17 @@ const RemoveFromCart = (id)=>{
 
 
 export const RefreshCart=()=>{
+    //Get cart notification
+    let Cartnotif=document.querySelector(".cart-icon span")
     //Get Product From Cart
     let Cart=JSON.parse(localStorage.getItem("productscart"))
-    if(Cart?.length) AddHtmlCart(Cart)
+    if(Cart?.length){
+        Cartnotif.textContent=Cart.length
+        AddHtmlCart(Cart)
+    } 
+        
     else{
+        Cartnotif.textContent=0
         // console.log("no products in Cart")
         AddHtmlCart(0)
 

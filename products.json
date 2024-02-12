@@ -34,7 +34,7 @@
       "imageUrl": "img/furniture/03.jpg",
       "rating": 4.2,
       "countRating": 8,
-      "SalesInfo": {"sells_count": 8, "new": true, "views": 18, "Solde_Out": false}
+      "SalesInfo": {"sells_count": 8, "new": false, "views": 18, "Solde_Out": false}
     },
     {
       "id": 4,
@@ -46,7 +46,7 @@
       "imageUrl": "img/furniture/04.jpg",
       "rating": 4.4,
       "countRating": 15,
-      "SalesInfo": {"sells_count": 12, "new": true, "views": 25, "Solde_Out": false}
+      "SalesInfo": {"sells_count": 12, "new": false, "views": 25, "Solde_Out": false}
     },
     {
       "id": 5,
@@ -82,7 +82,7 @@
       "imageUrl": "img/furniture/07.jpg",
       "rating": 4.5,
       "countRating": 14,
-      "SalesInfo": {"sells_count": 10, "new": true, "views": 22, "Solde_Out": false}
+      "SalesInfo": {"sells_count": 10, "new": false, "views": 22, "Solde_Out": false}
     },
     {
       "id": 8,
@@ -94,7 +94,7 @@
       "imageUrl": "img/furniture/08.jpg",
       "rating": 4.9,
       "countRating": 25,
-      "SalesInfo": {"sells_count": 30, "new": true, "views": 40, "Solde_Out": false, "Discount": 12}
+      "SalesInfo": {"sells_count": 30, "new": false, "views": 40, "Solde_Out": false, "Discount": 12}
     },
     {
       "id": 9,
@@ -214,7 +214,7 @@
       "imageUrl": "img/furniture/18.jpg",
       "rating": 4.0,
       "countRating": 8,
-      "SalesInfo": {"sells_count": 6, "new": true, "views": 15, "Solde_Out": false}
+      "SalesInfo": {"sells_count": 6, "new": false, "views": 15, "Solde_Out": false}
     },
     {
       "id": 19,
@@ -238,7 +238,7 @@
       "imageUrl": "img/furniture/20.jpg",
       "rating": 4.2,
       "countRating": 10,
-      "SalesInfo": {"sells_count": 8, "new": true, "views": 18, "Solde_Out": false}
+      "SalesInfo": {"sells_count": 8, "new": false, "views": 18, "Solde_Out": false}
     }
   ]
 }

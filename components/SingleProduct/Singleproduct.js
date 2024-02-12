@@ -130,29 +130,62 @@ const CreateProductDetails=(product)=>{
                 <!-- color start -->								
                 <div class="color-filter single-pro-color mb-20 clearfix">
                 <ul>
-                <li><span class="color-title text-capitalize">color</span></li>
-                <li><a class="active" href="#"><span class="color color-1"></span></a></li>
-                <li><a href="#"><span class="color color-2"></span></a></li>
-                <li><a href="#"><span class="color color-7"></span></a></li>
-                <li><a href="#"><span class="color color-3"></span></a></li>
-                <li><a href="#"><span class="color color-4"></span></a></li>
-                </ul>
+                <li><span class="color-title text-capitalize">color</span></li>`
+    //Add colors
+    for(let index=0;index<product.colors.length;index++){
+        console.log(product.colors[index])
+        switch(product.colors[index]){
+            case "walnut":
+                HtmlProduc+=`<li><a href="#"><span class="color color-1"></span></a></li>`
+                break
+            case "espresso":
+                HtmlProduc+=`<li><a href="#"><span class="color color-2"></span></a></li>`
+                break
+            case "white":
+                HtmlProduc+=`<li><a href="#"><span class="color color-3"></span></a></li>`
+                break
+            case "black":
+                HtmlProduc+=`<li><a href="#"><span class="color color-4"></span></a></li>`
+                break
+            case "brown":
+                HtmlProduc+=`<li><a href="#"><span class="color color-5"></span></a></li>`
+                break
+            case "gray":
+                HtmlProduc+=`<li><a href="#"><span class="color color-6"></span></a></li>`
+                break
+            case "teal":
+                HtmlProduc+=`<li><a href="#"><span class="color color-7"></span></a></li>`
+                break
+            case "mustard":
+                HtmlProduc+=`<li><a href="#"><span class="color color-8"></span></a></li>`
+                break
+            case "clear":
+                HtmlProduc+=`<li><a href="#"><span class="color color-9"></span></a></li>`
+                break
+            case "chrome":
+                HtmlProduc+=`<li><a href="#"><span class="color color-10"></span></a></li>`
+                break
+            
+        }
+        }
+
+    HtmlProduc+= `</ul>
                 </div>
                 <!-- color end -->
-                <!-- Size start -->
+                <!-- Tags start -->
                 <div class="size-filter single-pro-size mb-35 clearfix">
                 <ul>
-                <li><span class="color-title text-capitalize">size</span></li>`
+                <li><span class="color-title text-capitalize">Tags</span></li>`
 
-    //Add size
-    for(let index=0;index<product.sizes.length;index++){
-    HtmlProduc+=`<li><a href="#">${product.sizes[index]}</a></li>`
+    //Add Tags
+    for(let index=0;index<product.tags.length;index++){
+    HtmlProduc+=`<li><a href="#">${product.tags[index]}</a></li>`
     }
 
 
     HtmlProduc+=`</ul>
     </div>
-    <!-- Size end -->
+    <!-- Tags end -->
     <div class="clearfix">
     <div class="cart-plus-minus-Edit">
     <input type="text" value="02" name="qtybutton" class="cart-plus-minus-box">
