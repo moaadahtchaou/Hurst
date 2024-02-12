@@ -42,6 +42,7 @@ GetAllProducts().then((products=[])=>{
     my_awesome_script = document.createElement('script');
     my_awesome_script.setAttribute('src',"js/main.min.js");
     document.body.appendChild(my_awesome_script)
+    document.querySelector(".mean-bar")?.remove()
     //Edit the plus minus button
     EditPlusMinus(1)
 
