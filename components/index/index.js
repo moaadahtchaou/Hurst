@@ -1,4 +1,4 @@
-import  {GetAllProducts,addToCart,RefreshCart} from "../Start.js"
+import  {GetAllProducts,addToCart,RefreshCart,CreateModal,name} from "../Start.js"
 import {Createswiper} from"../Slider/slider.js"
 
 //Refresh Cart
@@ -59,10 +59,13 @@ GetAllProducts().then((products=[])=>{
             let id=parseInt(Cart.getAttribute("id"))
             Cart.addEventListener("click" ,()=>{addToCart(products.filter((product)=> product.id ===id)[0],1)} )
         })
-
-    
-
-
+        //Add Event Listener To Quick view Button 
+        let Quicks=document.querySelectorAll("a[title='Quick View']")
+        Quicks.forEach((quick)=>{
+            let id=parseInt(quick.getAttribute("id"))
+            quick.addEventListener("click" ,()=>{CreateModal(products.filter((product)=> product.id ===id)[0])} )
+            
+        })
 })
 const CreateProducts_Purchase_Featured= (products=[],FeaOrPur="")=>{
     let AllHtmlProducts=""
@@ -77,17 +80,16 @@ const CreateProducts_Purchase_Featured= (products=[],FeaOrPur="")=>{
         else if (prod.SalesInfo.new===true) AllHtmlProducts+=`<span class="pro-label new-label">new</span>`
 
 
-        AllHtmlProducts+=`<a href="single-product.html?${prod.id}"><img src="img/product/1.jpg" alt="" /></a>
+        AllHtmlProducts+=`<a href="single-product.html?${prod.id}" title="${prod.name}"><img src="img/product/1.jpg" alt="" /></a>
                                                                 <div class="product-action clearfix">
                                                                     <a href="wishlist.html" data-bs-toggle="tooltip" data-placement="top" title="Wishlist"><i class="zmdi zmdi-favorite-outline"></i></a>
-                                                                    <a href="#" data-bs-toggle="modal"  data-bs-target="#productModal" title="Quick View"><i class="zmdi zmdi-zoom-in"></i></a>
-                                                                    <a href="#" data-bs-toggle="tooltip" data-placement="top" title="Compare"><i class="zmdi zmdi-refresh"></i></a>
+                                                                    <a href="#" data-bs-toggle="modal"  data-bs-target="#productModal" title="Quick View" id=${prod.id}><i class="zmdi zmdi-zoom-in"></i></a>
                                                                     <a href="#" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart" id=${prod.id}><i class="zmdi zmdi-shopping-cart-plus"></i></a>
                                                                 </div>
                             </div>
                             <div class="product-info clearfix">
                                 <div class="fix">
-                                    <h4 class="post-title floatleft"><a href="single-product.html?${prod.id}">${prod.name}</a></h4>
+                                    <h4 class="post-title floatleft"><a href="single-product.html?${prod.id}" title="${prod.name}" >${name(prod.name)}</a></h4>
                                     <p class="floatright hidden-sm d-none d-md-block">Furniture</p>
                                 </div>
                                 <div class="fix">`
@@ -125,4 +127,3 @@ const CreateProducts_Purchase_Featured= (products=[],FeaOrPur="")=>{
     //Retuen Data
     return AllHtmlProducts                      
 }
-

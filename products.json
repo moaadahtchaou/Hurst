@@ -8,7 +8,7 @@
       "tags": ["modern", "leather", "chair"],
       "colors": ["black", "white", "brown"],
       "imageUrl": "img/furniture/01.jpg",
-      "rating": 4.8,
+      "rating": 3.7,
       "countRating": 12,
       "SalesInfo": {"sells_count": 15, "new": true, "views": 28, "Solde_Out": false, "Discount": 10}
     },
@@ -20,7 +20,7 @@
       "tags": ["vintage", "wooden", "table"],
       "colors": ["walnut", "gray"],
       "imageUrl": "img/furniture/02.jpg",
-      "rating": 4.6,
+      "rating": 3,
       "countRating": 10,
       "SalesInfo": {"sells_count": 20, "new": true, "views": 35, "Solde_Out": false, "Discount": 8}
     },
@@ -32,7 +32,7 @@
       "tags": ["contemporary", "plastic", "chair"],
       "colors": ["white", "gray", "mustard"],
       "imageUrl": "img/furniture/03.jpg",
-      "rating": 4.2,
+      "rating": 2,
       "countRating": 8,
       "SalesInfo": {"sells_count": 8, "new": false, "views": 18, "Solde_Out": false}
     },
@@ -104,7 +104,7 @@
       "tags": ["contemporary", "glass", "table"],
       "colors": ["clear", "black", "chrome"],
       "imageUrl": "img/furniture/09.jpg",
-      "rating": 4.3,
+      "rating": 3.3,
       "countRating": 18,
       "SalesInfo": {"sells_count": 22, "new": true, "views": 38, "Solde_Out": false, "Discount": 10}
     },
@@ -116,7 +116,7 @@
       "tags": ["rustic", "wooden", "table"],
       "colors": ["espresso"],
       "imageUrl": "img/furniture/10.jpg",
-      "rating": 4.1,
+      "rating": 1.1,
       "countRating": 9,
       "SalesInfo": {"sells_count": 14, "new": true, "views": 26, "Solde_Out": false}
     },
@@ -176,7 +176,7 @@
       "tags": ["leather", "table"],
       "colors": ["clear"],
       "imageUrl": "img/furniture/15.jpg",
-      "rating": 4.5,
+      "rating": 2.5,
       "countRating": 15,
       "SalesInfo": {"sells_count": 16, "new": true, "views": 32, "Solde_Out": false, "Discount": 12}
     },
@@ -188,7 +188,7 @@
       "tags": ["leather"],
       "colors": ["black", "brown", "white"],
       "imageUrl": "img/furniture/16.jpg",
-      "rating": 4.8,
+      "rating": 3.8,
       "countRating": 18,
       "SalesInfo": {"sells_count": 20, "new": true, "views": 38, "Solde_Out": false, "Discount": 8}
     },
@@ -200,7 +200,7 @@
       "tags": ["rustic", "wooden", "table"],
       "colors": ["gray"],
       "imageUrl": "img/furniture/17.jpg",
-      "rating": 4.3,
+      "rating": 1.3,
       "countRating": 14,
       "SalesInfo": {"sells_count": 12, "new": true, "views": 24, "Solde_Out": false}
     },

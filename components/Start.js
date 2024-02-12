@@ -118,19 +118,6 @@ const AddHtmlCart = (ProductsInfo)=>{
     miniCart.innerHTML=FullHtml
     return 0
         }
-
-
-
-        // Function for Name
-        function name(x){
-            if (x.length > 20) {
-                const lastSpaceIndex = x.substring(0, 22).lastIndexOf(' ')
-                return x.substring(0, lastSpaceIndex) + '...';
-            }
-            else {
-                return x
-            }
-        }
         //calc Price
         let TotalPrice=0
 
@@ -157,7 +144,7 @@ const AddHtmlCart = (ProductsInfo)=>{
                                 <a href="#"><img src="img/cart/1.jpg" alt=""></a>
                             </div>
                             <div class="cart-info">
-                                <h5><a href="single-product.html?${ProductInfo.product.id}">${name(ProductInfo.product.name)}</a></h5>
+                                <h5><a href="single-product.html?${ProductInfo.product.id}" title="${ProductInfo.product.name}">${name(ProductInfo.product.name)}</a></h5>
                                 <p class="mb-0">Price : $ ${price.toFixed(2)}</p>
                                 <p class="mb-0">Qty : ${ProductInfo.Quantity} </p>
                                 <span id=${ProductInfo.product.id} class="cart-delete"><a href="#"><i class="zmdi zmdi-close"></i></a></span>
@@ -180,3 +167,84 @@ const AddHtmlCart = (ProductsInfo)=>{
             button.addEventListener("click",()=>{RemoveFromCart(id)})
         })
     }
+
+
+export const CreateModal=(product)=>{
+    console.log(product)
+    let modal=document.querySelector(".modal-product")
+    let HtmlModal=`
+    <div class="modal-product" xpath="1">
+									<div class="product-images">
+										<div class="main-image images">
+											<img alt="#" src="img/product/quickview-photo.jpg">
+										</div>
+									</div><!-- .product-images -->
+
+									<div class="product-info">
+										<h1 title="${product.name}">${product.name}</h1>
+										<div class="price-box-3">
+											<hr>
+											<div class="s-price-box">`
+    //Calcul Discount 
+    if(product.SalesInfo.Discount) {
+        let price=product.price
+        let pricediscount=price -((product.SalesInfo.Discount/100)*price)
+        HtmlModal+=`<span class="new-price">$${pricediscount.toFixed(2)}</span>
+                    <span class="old-price">$${price}</span>`
+    }
+                                    
+    else{
+        HtmlModal+=`<span class="new-price">$${product.price}</span>`
+        }
+    HtmlModal+=`											</div>
+    <hr>
+</div>
+<a href="shop.html" class="see-all">See all features</a>
+<div class="quick-add-to-cart">
+    <form method="post" class="cart">
+        <div class="numbers-row">
+            <input type="number" id="french-hens" value="3" min="1">
+        </div>
+        <button class="single_add_to_cart_button" id="${product.id}">Add to cart</button>
+    </form>
+</div>
+<div class="quick-desc">
+    ${product.description}
+</div>
+<div class="social-sharing">
+    <div class="widget widget_socialsharing_widget">
+        <h3 class="widget-title-modal">Share this product</h3>
+        <ul class="social-icons">
+            <li><a target="_blank" title="Google +" href="#" class="gplus social-icon"><i class="zmdi zmdi-google-plus"></i></a></li>
+            <li><a target="_blank" title="Twitter" href="#" class="twitter social-icon"><i class="zmdi zmdi-twitter"></i></a></li>
+            <li><a target="_blank" title="Facebook" href="#" class="facebook social-icon"><i class="zmdi zmdi-facebook"></i></a></li>
+            <li><a target="_blank" title="LinkedIn" href="#" class="linkedin social-icon"><i class="zmdi zmdi-linkedin"></i></a></li>
+        </ul>
+    </div>
+</div>
+</div><!-- .product-info -->
+</div>`
+modal.innerHTML=HtmlModal
+//Add Event Listener To Add Cart Button
+    const but=modal.querySelector(".single_add_to_cart_button")
+    
+    but.addEventListener("click" ,(event)=>{
+        event.preventDefault()
+        const numofproduct=parseInt(modal.querySelector("#french-hens").value)
+        addToCart(product,numofproduct)
+    } )
+}
+
+
+
+
+// Function for Name
+export function name(x){
+            if (x.length > 20) {
+                const lastSpaceIndex = x.substring(0, 22).lastIndexOf(' ')
+                return x.substring(0, lastSpaceIndex) + '...';
+            }
+            else {
+                return x
+            }
+        }

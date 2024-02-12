@@ -1,4 +1,4 @@
-import {GetAllProducts,RefreshCart,addToCart} from "../Start.js"
+import {GetAllProducts,RefreshCart,addToCart,CreateModal,name} from "../Start.js"
 //Refresh Cart
 RefreshCart()
 //filter
@@ -172,6 +172,12 @@ const Pagination = (products,numpage)=>{
                 let id=parseInt(Cart.getAttribute("id"))
                 Cart.addEventListener("click" ,()=>{addToCart(newproducts.filter((product)=> product.id ===id)[0],1)} )
     })
+    //Add Event Listener To Quick view Button 
+    let Quicks=document.querySelectorAll("a[title='Quick View']")
+    Quicks.forEach((quick)=>{
+        let id=parseInt(quick.getAttribute("id"))
+        quick.addEventListener("click" ,()=>{CreateModal(products.filter((product)=> product.id ===id)[0])} )
+    })
 
 }
 
@@ -180,7 +186,7 @@ const Paginationhtml=(products)=>{
         let HtmlProduct=``
         products.forEach((product)=>{
         HtmlProduct+=`<div class="col-xl-3 col-md-4" xpath="1">
-                                <div class="single-product id=${product.id}">
+                                <div class="single-product" id=${product.id} title="${product.name}">
                                     <div class="product-img">
                                 `
          //Check if need to add new Or sale Tag
@@ -204,7 +210,7 @@ const Paginationhtml=(products)=>{
         </div>
         <div class="product-info clearfix text-center">
             <div class="fix">
-                <h4 class="post-title"><a href="#">${product.name}</a></h4>
+                <h4 class="post-title"><a href="single-product.html?${product.id}" title="${product.name}"  >${name(product.name)}</a></h4>
             </div>
             <div class="fix">
             <span class="pro-rating">`
@@ -220,8 +226,7 @@ const Paginationhtml=(products)=>{
         </div>
         <div class="product-action clearfix">
             <a href="wishlist.html" data-bs-toggle="tooltip" data-placement="top" title="Wishlist"><i class="zmdi zmdi-favorite-outline"></i></a>
-            <a href="#" data-bs-toggle="modal" data-bs-target="#productModal" title="Quick View"><i class="zmdi zmdi-zoom-in"></i></a>
-            <a href="#" data-bs-toggle="tooltip" data-placement="top" title="Compare"><i class="zmdi zmdi-refresh"></i></a>
+            <a href="#" data-bs-toggle="modal" data-bs-target="#productModal" title="Quick View" id=${product.id}><i class="zmdi zmdi-zoom-in"></i></a>
             <a href="#" data-bs-toggle="tooltip" data-placement="top" id=${product.id} title="Add To Cart"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
         </div>
     </div>
