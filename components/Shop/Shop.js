@@ -234,6 +234,4 @@ const Paginationhtml=(products)=>{
 </div>`
     })
     row.innerHTML= HtmlProduct
-
-
 }

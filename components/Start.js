@@ -235,9 +235,6 @@ modal.innerHTML=HtmlModal
     } )
 }
 
-
-
-
 // Function for Name
 export function name(x){
             if (x.length > 20) {
