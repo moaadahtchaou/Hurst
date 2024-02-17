@@ -1,4 +1,4 @@
-import {GetAllProducts,RefreshCart,addToCart,CreateModal,name} from "../Start.js"
+import {GetAllProducts,RefreshCart,addToCart,CreateModal,name,RefreshButtonswishlist,AddWishlist} from "../Start.js"
 //Refresh Cart
 RefreshCart()
 //filter
@@ -19,6 +19,7 @@ GetAllProducts().then((products)=>{
     Pagination(products,1)
 
     CreateFilters(products)
+
 
 
 
@@ -172,12 +173,21 @@ const Pagination = (products,numpage)=>{
                 let id=parseInt(Cart.getAttribute("id"))
                 Cart.addEventListener("click" ,()=>{addToCart(newproducts.filter((product)=> product.id ===id)[0],1)} )
     })
+    //Add Event Listener To wishlist
+    const wishlists=document.querySelectorAll("a[title='Wishlist']")
+    wishlists.forEach((wish)=>{
+    let id=parseInt(wish.getAttribute("id"))
+    wish.addEventListener("click" ,()=>{AddWishlist(products.filter((product)=> product.id ===id)[0])} )
+        })
     //Add Event Listener To Quick view Button 
     let Quicks=document.querySelectorAll("a[title='Quick View']")
     Quicks.forEach((quick)=>{
         let id=parseInt(quick.getAttribute("id"))
         quick.addEventListener("click" ,()=>{CreateModal(products.filter((product)=> product.id ===id)[0])} )
     })
+    //Refresh Favorite
+    RefreshButtonswishlist()
+
 
 }
 
@@ -225,7 +235,7 @@ const Paginationhtml=(products)=>{
         HtmlProduct+=`</span>
         </div>
         <div class="product-action clearfix">
-            <a href="wishlist.html" data-bs-toggle="tooltip" data-placement="top" title="Wishlist"><i class="zmdi zmdi-favorite-outline"></i></a>
+            <a href="#" data-bs-toggle="tooltip" data-placement="top" title="Wishlist" id=${product.id}><i class="zmdi zmdi-favorite-outline"></i></a>
             <a href="#" data-bs-toggle="modal" data-bs-target="#productModal" title="Quick View" id=${product.id}><i class="zmdi zmdi-zoom-in"></i></a>
             <a href="#" data-bs-toggle="tooltip" data-placement="top" id=${product.id} title="Add To Cart"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
         </div>

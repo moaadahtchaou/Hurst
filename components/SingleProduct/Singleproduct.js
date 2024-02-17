@@ -1,4 +1,4 @@
-import  {GetAllProducts,RefreshCart,addToCart,CreateModal} from "../Start.js"
+import  {GetAllProducts,RefreshCart,addToCart,CreateModal,AddWishlist,RefreshButtonswishlist} from "../Start.js"
 
 //Refresh Cart
 RefreshCart()
@@ -49,11 +49,17 @@ GetAllProducts().then((products=[])=>{
     //Add Event Listener To Cart Button
     let Cart= document.querySelector("a[title='Add To Cart']")
     Cart.addEventListener("click" ,()=>{addToCart(product,+GetValueQuantity())} )
+    //Add Event Listener To wishlist
+    const wishlist=document.querySelector("a[title='Wishlist']")
+    wishlist.addEventListener("click" ,()=>{AddWishlist(product)} )
     //Add Event Listener To Quick view Button 
     let Quick=document.querySelector("a[title='Quick View']")
     Quick.addEventListener("click" ,()=>{CreateModal(product)} )
+    //RefreshButtonswishlist
+    RefreshButtonswishlist()
     //Edit Tap panels
     Tappanel(product)
+
 
 })
 
@@ -181,7 +187,7 @@ const CreateProductDetails=(product)=>{
     <input type="text" value="02" name="qtybutton" class="cart-plus-minus-box">
     </div>
     <div class="product-action clearfix">
-    <a href="wishlist.html" data-bs-toggle="tooltip" data-placement="top" title="Wishlist"><i class="zmdi zmdi-favorite-outline"></i></a>
+    <a href="#" data-bs-toggle="tooltip" data-placement="top" title="Wishlist" id=${product.id}><i class="zmdi zmdi-favorite-outline"></i></a>
     <a href="#" data-bs-toggle="modal"  data-bs-target="#productModal" title="Quick View"><i class="zmdi zmdi-zoom-in"></i></a>
     <a href="#" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
     </div>

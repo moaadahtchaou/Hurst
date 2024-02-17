@@ -1,4 +1,4 @@
-import  {GetAllProducts,addToCart,RefreshCart,CreateModal,name,AddWishlist} from "../Start.js"
+import  {GetAllProducts,addToCart,RefreshCart,CreateModal,name,AddWishlist,RefreshButtonswishlist} from "../Start.js"
 import {Createswiper,CreateDiscountSwiper} from"../Slider/slider.js"
 
 //Refresh Cart
@@ -72,7 +72,7 @@ GetAllProducts().then((products=[])=>{
             const prod=products.slice().filter((product)=>  product.id===productsBanner.id)[0]
             NewinfoBannerProducts.push({...prod,"imgNewest":productsBanner.imgNewest,"NumBanner":productsBanner.NumBanner,"TextColor":productsBanner.TextColor})
         })
-        console.log(NewinfoBannerProducts)
+        // console.log(NewinfoBannerProducts)
         NewinfoBannerProducts.forEach((product)=>{
             //Image
             Banner[product.NumBanner-1].querySelector("img").src=product.imgNewest
@@ -136,7 +136,7 @@ GetAllProducts().then((products=[])=>{
     let BestSellerproducts=products.slice().sort((a, b) => b.SalesInfo.sells_count - a.SalesInfo.sells_count)
     let Mostviewproducts=products.slice().sort((a, b) => b.SalesInfo.views - a.SalesInfo.views)
     let Discountproducts=products.slice().filter((product)=>product.SalesInfo.Discount)
-    console.log(DiscSliderProducts)
+    // console.log(DiscSliderProducts)
     //CreatHtml
     let HTMLFeatured = CreateProducts_Purchase_Featured(newproducts,"featured")
     let HTMLSliderDiscount= CreateSlider_Discount(DiscSliderProducts)
@@ -222,6 +222,10 @@ GetAllProducts().then((products=[])=>{
             let id=parseInt(quick.getAttribute("id"))
             quick.addEventListener("click" ,()=>{CreateModal(products.filter((product)=> product.id ===id)[0])} )
         })
+
+        //Refresh Favorite
+        RefreshButtonswishlist()
+
 })
 const CreateProducts_Purchase_Featured= (products=[],FeaOrPur="")=>{
     let AllHtmlProducts=""

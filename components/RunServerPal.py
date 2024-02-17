@@ -1,4 +1,11 @@
-import requests
+input=input().split(" ")
+a=int(input[0])
+b=int(input[1])
 
-re=requests.get("https://api.myip.com")
-print(re.text)
+output = 0
+while not (a > b):
+    a = a * 3
+    b = b * 2
+    output += 1
+
+print(output)

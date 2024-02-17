@@ -456,6 +456,7 @@
 }
 .zmdi-favorite:before {
   content: '\f15f';
+  color: #c87065;
 }
 .zmdi-filter-list:before {
   content: '\f160';

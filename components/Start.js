@@ -242,14 +242,17 @@ export const AddWishlist=(product)=>{
     let AlreadyExist=OldWishlist.slice().filter((prod)=>{return prod.id===product.id})[0]
     if(AlreadyExist){
         Removewishlist(product)
+        //RefreshButtonsFavorite
+        RefreshButtonwishlist(product,"remove")
     }
     else{
         OldWishlist.push(product)
         //Set new items in Wishlist
         localStorage.setItem("Wishlist",JSON.stringify(OldWishlist))
+        //RefreshButtonsFavorite
+        RefreshButtonwishlist(product,"add")
     }
-    //RefreshButtonsFavorite
-    RefreshButtonwishlist()
+
 
 
 }
@@ -260,26 +263,43 @@ const Removewishlist=(product)=>{
     // console.log(NewWishlist)
     //Set new items in Wishlist
     localStorage.setItem("Wishlist",JSON.stringify(NewWishlist))
+
 }
+//Refresh Button Favorite
+const RefreshButtonwishlist=(product,type)=>{
+    const wishlists=document.querySelectorAll(`a[title='Wishlist'][id='${product.id}']`)
+    wishlists.forEach((wishlist)=>{
+        if(type==="add") {
+                console.log("add")
+                wishlist.querySelector("i").classList.replace("zmdi-favorite-outline","zmdi-favorite")
+        }
+        else if(type==="remove"){
+                console.log("remove")
+                wishlist.querySelector("i").classList.replace("zmdi-favorite","zmdi-favorite-outline")
+        }
+
+    })
+
+}
+
 // Refresh Buttons Favorite
-const RefreshButtonwishlist=()=>{
+export const RefreshButtonswishlist=()=>{
     const Wishlistlocal=JSON.parse(localStorage.getItem("Wishlist"))
     const wishlists=document.querySelectorAll("a[title='Wishlist']")
     wishlists.forEach((wishlist)=>{
         let id=parseInt(wishlist.getAttribute("id"))
         let exist=0
-        Wishlistlocal.forEach((wishlistloc)=>{
-            console.log(wishlistloc.id, id)
+        Wishlistlocal?.forEach((wishlistloc)=>{
             if(wishlistloc.id===id) {
                 wishlist.querySelector("i").classList.replace("zmdi-favorite-outline","zmdi-favorite")
                 exist=1
             }
             else if(exist===0){
+                
                 wishlist.querySelector("i").classList.replace("zmdi-favorite","zmdi-favorite-outline")
             }
         }
         )
-        console.log("id:", id ,"Exists:", exist )
     })
 }
 
