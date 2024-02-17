@@ -52,6 +52,9 @@ GetAllProducts().then((products=[])=>{
     //Add Event Listener To Quick view Button 
     let Quick=document.querySelector("a[title='Quick View']")
     Quick.addEventListener("click" ,()=>{CreateModal(product)} )
+    //Edit Tap panels
+    Tappanel(product)
+
 })
 
 
@@ -62,41 +65,27 @@ const CreateProductDetails=(product)=>{
     let HtmlProduc=`<!-- Single-pro-slider Big-photo start -->
                     <div class="single-pro-slider single-big-photo view-lightbox slider-for">
                         <div>
-                            <img src="img/single-product/medium/1.jpg" alt="" />
-                            <a class="view-full-screen" href="img/single-product/large/1.jpg"  data-lightbox="roadtrip" data-title="My caption">
+                            <img src="${product.imgmain}" alt="" />
+                            <a class="view-full-screen" href="${product.imgmain}"  data-lightbox="roadtrip" data-title="My caption">
+                                <i class="zmdi zmdi-zoom-in"></i>
+                            </a>
+                        </div>`
+        product.imgs?.forEach((img)=>{
+            HtmlProduc+=`
+            <div>
+                            <img src="${img}" alt="" />
+                            <a class="view-full-screen" href="${img}"  data-lightbox="roadtrip" data-title="My caption">
                                 <i class="zmdi zmdi-zoom-in"></i>
                             </a>
                         </div>
-                        <div>
-                            <img src="img/single-product/medium/2.jpg" alt="" />
-                            <a class="view-full-screen" href="img/single-product/large/2.jpg"  data-lightbox="roadtrip" data-title="My caption">
-                                <i class="zmdi zmdi-zoom-in"></i>
-                            </a>
-                        </div>
-                        <div>
-                            <img src="img/single-product/medium/3.jpg" alt="" />
-                            <a class="view-full-screen" href="img/single-product/large/3.jpg"  data-lightbox="roadtrip" data-title="My caption">
-                                <i class="zmdi zmdi-zoom-in"></i>
-                            </a>
-                        </div>
-                        <div>
-                            <img src="img/single-product/medium/4.jpg" alt="" />
-                            <a class="view-full-screen" href="img/single-product/large/4.jpg"  data-lightbox="roadtrip" data-title="My caption">
-                                <i class="zmdi zmdi-zoom-in"></i>
-                            </a>
-                        </div>
-                        <div>
-                            <img src="img/single-product/medium/5.jpg" alt="" />
-                            <a class="view-full-screen" href="img/single-product/large/5.jpg"  data-lightbox="roadtrip" data-title="My caption">
-                                <i class="zmdi zmdi-zoom-in"></i>
-                            </a>
-                        </div>
-                    </div>	
-                    <!-- Single-pro-slider Big-photo end -->								
-                    <div class="product-info">
-                        <div class="fix">
-                            <h4 class="post-title floatleft">${product.name}</h4>
-                            <span class="pro-rating floatright">`
+            `
+        })
+        HtmlProduc+=`</div>	
+        <!-- Single-pro-slider Big-photo end -->								
+        <div class="product-info">
+            <div class="fix">
+                <h4 class="post-title floatleft">${product.name}</h4>
+                <span class="pro-rating floatright">`
     // Calcul Star Rating
     let Rating=product.rating
     for (let index = 0; index < 5; index++) {
@@ -198,26 +187,22 @@ const CreateProductDetails=(product)=>{
     </div>
     </div>
     <!-- Single-pro-slider Small-photo start -->
-    <div class="single-pro-slider single-sml-photo slider-nav">
+    <div class="single-pro-slider single-sml-photo slider-nav">`
+    HtmlProduc+=`
     <div>
-    <img src="img/single-product/small/1.jpg" alt="" />
-    </div>
-    <div>
-    <img src="img/single-product/small/2.jpg" alt="" />
-    </div>
-    <div>
-    <img src="img/single-product/small/3.jpg" alt="" />
-    </div>
-    <div>
-    <img src="img/single-product/small/4.jpg" alt="" />
-    </div>
-    <div>
-    <img src="img/single-product/small/5.jpg" alt="" />
-    </div>
-    </div>
-    <!-- Single-pro-slider Small-photo end -->
+        <img src="${product.imgmain}" alt="" />
     </div>
     `
+    product.imgs?.forEach((img)=>{
+        HtmlProduc+=`
+        <div>
+            <img src="${img}" alt="" />
+        </div>
+        `
+    })
+    HtmlProduc+=`    </div>
+    <!-- Single-pro-slider Small-photo end -->
+    </div>`
         return HtmlProduc
 }
 const EditPlusMinus = (Quantity)=>{
@@ -249,4 +234,22 @@ function minus(){
 
 const GetValueQuantity=()=>{
     return document.querySelector(".cart-plus-minus-Edit-box").value
+}
+
+const Tappanel=(product)=>{
+    //Edit dexription panel
+    const description=document.querySelector("#description")
+        //Text
+        description.querySelector(".tab-title").textContent=product.name
+        //Paragraphe
+        const Allparagraph=description.querySelectorAll("p")
+        for (let index = 0; index < Allparagraph.length; index++) {
+            if(index===0){
+                Allparagraph[index].textContent=product.description
+            }
+            else{
+                Allparagraph[index].remove()
+            }
+            
+        }
 }

@@ -206,7 +206,7 @@ const Paginationhtml=(products)=>{
             HtmlProduct+=`<span class="pro-price-2">$ ${product.price}</span>`
         }
         //
-        HtmlProduct+=`<a href="single-product.html"><img src="img/product/6.jpg" alt=""></a>
+        HtmlProduct+=`<a href="single-product.html?${product.id}"><img src="${product.imgmain}" alt=""></a>
         </div>
         <div class="product-info clearfix text-center">
             <div class="fix">

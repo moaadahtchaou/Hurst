@@ -1,8 +1,10 @@
-//Mouad
+//Mouad -- 
 
-export const GetAllProducts = async () => { 
+export const GetAllProducts = async (types="") => { 
     console.log("Fetch..")
     const Data = await fetch("./products.json").then((result=>result.json()))
+    if(types==="Slider") return Data.SlideProducts
+    else if(types==="Banner") return Data.Banner
     return Data.products
 }
 export const GetAllScripts= ()=>{
@@ -141,7 +143,7 @@ const AddHtmlCart = (ProductsInfo)=>{
             // console.log(ProductCart.product)
             FullHtml+=`<div class="single-cart clearfix">
                             <div class="cart-photo">
-                                <a href="#"><img src="img/cart/1.jpg" alt=""></a>
+                                <a href="#"><img src="${ProductInfo.product.imgmain}" alt=""></a>
                             </div>
                             <div class="cart-info">
                                 <h5><a href="single-product.html?${ProductInfo.product.id}" title="${ProductInfo.product.name}">${name(ProductInfo.product.name)}</a></h5>
@@ -176,7 +178,7 @@ export const CreateModal=(product)=>{
     <div class="modal-product" xpath="1">
 									<div class="product-images">
 										<div class="main-image images">
-											<img alt="#" src="img/product/quickview-photo.jpg">
+											<img alt="#" src="${product.imgmain}">
 										</div>
 									</div><!-- .product-images -->
 
@@ -234,6 +236,53 @@ modal.innerHTML=HtmlModal
         addToCart(product,numofproduct)
     } )
 }
+//Add product to wishlist
+export const AddWishlist=(product)=>{
+    const OldWishlist=JSON.parse(localStorage.getItem("Wishlist"))||[]
+    let AlreadyExist=OldWishlist.slice().filter((prod)=>{return prod.id===product.id})[0]
+    if(AlreadyExist){
+        Removewishlist(product)
+    }
+    else{
+        OldWishlist.push(product)
+        //Set new items in Wishlist
+        localStorage.setItem("Wishlist",JSON.stringify(OldWishlist))
+    }
+    //RefreshButtonsFavorite
+    RefreshButtonwishlist()
+
+
+}
+//Remove product From wishlist
+const Removewishlist=(product)=>{
+    const OldWishlist=JSON.parse(localStorage.getItem("Wishlist"))
+    const NewWishlist=OldWishlist.slice().filter(prod=> prod.id!==product.id)
+    // console.log(NewWishlist)
+    //Set new items in Wishlist
+    localStorage.setItem("Wishlist",JSON.stringify(NewWishlist))
+}
+// Refresh Buttons Favorite
+const RefreshButtonwishlist=()=>{
+    const Wishlistlocal=JSON.parse(localStorage.getItem("Wishlist"))
+    const wishlists=document.querySelectorAll("a[title='Wishlist']")
+    wishlists.forEach((wishlist)=>{
+        let id=parseInt(wishlist.getAttribute("id"))
+        let exist=0
+        Wishlistlocal.forEach((wishlistloc)=>{
+            console.log(wishlistloc.id, id)
+            if(wishlistloc.id===id) {
+                wishlist.querySelector("i").classList.replace("zmdi-favorite-outline","zmdi-favorite")
+                exist=1
+            }
+            else if(exist===0){
+                wishlist.querySelector("i").classList.replace("zmdi-favorite","zmdi-favorite-outline")
+            }
+        }
+        )
+        console.log("id:", id ,"Exists:", exist )
+    })
+}
+
 
 // Function for Name
 export function name(x){

@@ -1,4 +1,36 @@
 {
+  "Banner":[
+    {
+      "id":1,
+      "imgNewest":"img/Bannerr/BF1624S_DSC_5133_cp-450x375.jpg",
+      "NumBanner":1,
+      "TextColor":"#000000"
+    },
+    {
+      "id":10,
+      "imgNewest":"img/MainImg/Rustic Wooden Side Table.jpg",
+      "NumBanner":2,
+      "TextColor":"#ffffff"
+    }
+  ],
+  "SlideProducts":[
+    {
+      "id": 6,
+      "imgSlider":"img/slider/Porto jadalnia baner gora.jpg",
+      "SliderOrder":0
+    },
+    {
+      "id": 3,
+      "imgSlider":"img/slider/Porto salon baner dol.jpg",
+      "SliderOrder":2
+    },
+    {
+      "id": 16,
+      "imgSlider":"img/slider/Zensa-Design-Green-Walls-06-1220x800.jpg",
+      "SliderOrder":1
+    }
+  ],
+
   "products": [
     {
       "id": 1,
@@ -7,10 +39,10 @@
       "price": 199.99,
       "tags": ["modern", "leather", "chair"],
       "colors": ["black", "white", "brown"],
-      "imageUrl": "img/furniture/01.jpg",
+      "imgmain": "img/MainImg/Modern Leather Accent Chair.jpg",
       "rating": 3.7,
       "countRating": 12,
-      "SalesInfo": {"sells_count": 15, "new": true, "views": 28, "Solde_Out": false, "Discount": 10}
+      "SalesInfo": {"sells_count": 15, "new": true, "views": 28, "Solde_Out": true, "Discount": 10}
     },
     {
       "id": 2,
@@ -19,10 +51,11 @@
       "price": 399.99,
       "tags": ["vintage", "wooden", "table"],
       "colors": ["walnut", "gray"],
-      "imageUrl": "img/furniture/02.jpg",
+      "imgmain": "img/MainImg/Vintage-Wooden-Dining-Table.jpg",
+      "imgs":["img/MainImg/Vintage-Wooden-Dining-Table-2.jpg","img/MainImg/Vintage-Wooden-Dining-Table-3.jpg"],
       "rating": 3,
       "countRating": 10,
-      "SalesInfo": {"sells_count": 20, "new": true, "views": 35, "Solde_Out": false, "Discount": 8}
+      "SalesInfo": {"sells_count": 20, "new": true, "views": 35, "Solde_Out": true, "Discount": 8}
     },
     {
       "id": 3,
@@ -31,7 +64,8 @@
       "price": 59.99,
       "tags": ["contemporary", "plastic", "chair"],
       "colors": ["white", "gray", "mustard"],
-      "imageUrl": "img/furniture/03.jpg",
+      "imgmain": "img/MainImg/Contemporary-Plastic-Dining-Chair.jpg",
+      "imgs":["img/MainImg/Contemporary-Plastic-Dining-Chair-2.jpg","img/MainImg/Contemporary-Plastic-Dining-Chair-3.jpg"],
       "rating": 2,
       "countRating": 8,
       "SalesInfo": {"sells_count": 8, "new": false, "views": 18, "Solde_Out": false}
@@ -43,7 +77,8 @@
       "price": 899.99,
       "tags": ["rustic", "leather", "sofa"],
       "colors": ["chrome", "clear"],
-      "imageUrl": "img/furniture/04.jpg",
+      "imgmain": "img/MainImg/Rustic Leather Sofa.jpg",
+      "imgs":["img/MainImg/Rustic Leather Sofa-2.jpg","img/MainImg/Rustic Leather Sofa-3.jpg"],
       "rating": 4.4,
       "countRating": 15,
       "SalesInfo": {"sells_count": 12, "new": false, "views": 25, "Solde_Out": false}
@@ -55,10 +90,11 @@
       "price": 149.99,
       "tags": ["stylish", "leather", "table"],
       "colors": ["espresso", "teal"],
-      "imageUrl": "img/furniture/05.jpg",
+      "imgmain": "img/MainImg/Stylish Glass Coffee Table.jpg",
+      "imgs":["img/MainImg/Stylish Glass Coffee Table-2.jpg","img/MainImg/Stylish Glass Coffee Table-3.jpg"],
       "rating": 4.7,
       "countRating": 20,
-      "SalesInfo": {"sells_count": 18, "new": true, "views": 30, "Solde_Out": false, "Discount": 15}
+      "SalesInfo": {"sells_count": 18, "new": false, "views": 30, "Solde_Out": false, "Discount": 15}
     },
     {
       "id": 6,
@@ -67,10 +103,11 @@
       "price": 79.99,
       "tags": ["plastic", "modern", "chair"],
       "colors": ["black", "white"],
-      "imageUrl": "img/furniture/06.jpg",
+      "imgmain": "img/MainImg/Plastic Outdoor Lounge Chair.jpg",
+      "imgs":["img/MainImg/Plastic Outdoor Lounge Chair-2.jpg"],
       "rating": 4.0,
       "countRating": 6,
-      "SalesInfo": {"sells_count": 5, "new": true, "views": 15, "Solde_Out": false}
+      "SalesInfo": {"sells_count": 5, "new": false, "views": 15, "Solde_Out": false}
     },
     {
       "id": 7,
@@ -79,7 +116,8 @@
       "price": 299.99,
       "tags": ["stylish", "wooden"],
       "colors": ["walnut"],
-      "imageUrl": "img/furniture/07.jpg",
+      "imgmain": "img/MainImg/product/Mid-Century Wooden Bookshelf.jpg",
+      "imgs":[],
       "rating": 4.5,
       "countRating": 14,
       "SalesInfo": {"sells_count": 10, "new": false, "views": 22, "Solde_Out": false}
@@ -91,7 +129,8 @@
       "price": 449.99,
       "tags": ["leather", "recliner", "armchair"],
       "colors": ["brown", "gray"],
-      "imageUrl": "img/furniture/08.jpg",
+      "imgmain": "img/MainImg/Leather Recliner Armchair.jpg",
+      "imgs":["img/MainImg/Leather Recliner Armchair-2.jpg"],
       "rating": 4.9,
       "countRating": 25,
       "SalesInfo": {"sells_count": 30, "new": false, "views": 40, "Solde_Out": false, "Discount": 12}
@@ -103,10 +142,11 @@
       "price": 599.99,
       "tags": ["contemporary", "glass", "table"],
       "colors": ["clear", "black", "chrome"],
-      "imageUrl": "img/furniture/09.jpg",
+      "imgmain": "img/MainImg/Contemporary Glass Dining Table.jpg",
+      "imgs":["img/MainImg/Contemporary Glass Dining Table-2.jpg","img/MainImg/Contemporary Glass Dining Table-3.jpg"],
       "rating": 3.3,
       "countRating": 18,
-      "SalesInfo": {"sells_count": 22, "new": true, "views": 38, "Solde_Out": false, "Discount": 10}
+      "SalesInfo": {"sells_count": 22, "new": false, "views": 38, "Solde_Out": false, "Discount": 10}
     },
     {
       "id": 10,
@@ -115,7 +155,8 @@
       "price": 79.99,
       "tags": ["rustic", "wooden", "table"],
       "colors": ["espresso"],
-      "imageUrl": "img/furniture/10.jpg",
+      "imgmain": "img/MainImg/Rustic Wooden Side Table.jpg",
+      "imgs":[],
       "rating": 1.1,
       "countRating": 9,
       "SalesInfo": {"sells_count": 14, "new": true, "views": 26, "Solde_Out": false}
@@ -127,10 +168,11 @@
       "price": 129.99,
       "tags": ["stylish", "leather"],
       "colors": ["black", "white", "brown"],
-      "imageUrl": "img/furniture/11.jpg",
+      "imgmain": "img/MainImg/Stylish Leather Ottoman.jpg",
+      "imgs":["img/MainImg/Stylish Leather Ottoman-2.jpg"],
       "rating": 4.7,
       "countRating": 22,
-      "SalesInfo": {"sells_count": 25, "new": true, "views": 35, "Solde_Out": false, "Discount": 15}
+      "SalesInfo": {"sells_count": 25, "new": false, "views": 35, "Solde_Out": false, "Discount": 15}
     },
     {
       "id": 12,
@@ -139,10 +181,11 @@
       "price": 149.99,
       "tags": ["wooden"],
       "colors": ["mustard"],
-      "imageUrl": "img/furniture/12.jpg",
+      "imgmain": "img/MainImg/Wooden Outdoor Bench.jpg",
+      "imgs":["img/MainImg/Wooden Outdoor Bench-2.jpg"],
       "rating": 4.4,
       "countRating": 16,
-      "SalesInfo": {"sells_count": 18, "new": true, "views": 30, "Solde_Out": false}
+      "SalesInfo": {"sells_count": 18, "new": false, "views": 30, "Solde_Out": false}
     },
     {
       "id": 13,
@@ -151,10 +194,11 @@
       "price": 89.99,
       "tags": ["plastic", "chair"],
       "colors": ["gray"],
-      "imageUrl": "img/furniture/13.jpg",
+      "imgmain": "img/MainImg/Plastic Stackable Patio Chairs.jpg",
+      "imgs":["img/MainImg/Plastic Stackable Patio Chairs-2.jpg"],
       "rating": 4.2,
       "countRating": 12,
-      "SalesInfo": {"sells_count": 10, "new": true, "views": 20, "Solde_Out": false}
+      "SalesInfo": {"sells_count": 10, "new": true, "views": 20, "Solde_Out": true}
     },
     {
       "id": 14,
@@ -163,7 +207,8 @@
       "price": 799.99,
       "tags": ["stylish", "sofa"],
       "colors": ["gray", "teal", "mustard"],
-      "imageUrl": "img/furniture/14.jpg",
+      "imgmain": "img/MainImg/Mid-Century Stylish Sofa.jpg",
+      "imgs":["img/MainImg/Mid-Century Stylish Sofa-2.jpg"],
       "rating": 4.6,
       "countRating": 20,
       "SalesInfo": {"sells_count": 28, "new": true, "views": 45, "Solde_Out": false, "Discount": 10}
@@ -175,7 +220,8 @@
       "price": 179.99,
       "tags": ["leather", "table"],
       "colors": ["clear"],
-      "imageUrl": "img/furniture/15.jpg",
+      "imgmain": "img/MainImg/Glass Top Coffee Table.jpg",
+      "imgs":[],
       "rating": 2.5,
       "countRating": 15,
       "SalesInfo": {"sells_count": 16, "new": true, "views": 32, "Solde_Out": false, "Discount": 12}
@@ -187,10 +233,11 @@
       "price": 129.99,
       "tags": ["leather"],
       "colors": ["black", "brown", "white"],
-      "imageUrl": "img/furniture/16.jpg",
+      "imgmain": "img/MainImg/Leather Swivel Bar Stool.jpg",
+      "imgs":[],
       "rating": 3.8,
       "countRating": 18,
-      "SalesInfo": {"sells_count": 20, "new": true, "views": 38, "Solde_Out": false, "Discount": 8}
+      "SalesInfo": {"sells_count": 20, "new": true, "views": 38, "Solde_Out": true, "Discount": 8}
     },
     {
       "id": 17,
@@ -199,10 +246,11 @@
       "price": 69.99,
       "tags": ["rustic", "wooden", "table"],
       "colors": ["gray"],
-      "imageUrl": "img/furniture/17.jpg",
+      "imgmain": "img/MainImg/Rustic Wooden Bedside Table.jpg",
+      "imgs":[],
       "rating": 1.3,
       "countRating": 14,
-      "SalesInfo": {"sells_count": 12, "new": true, "views": 24, "Solde_Out": false}
+      "SalesInfo": {"sells_count": 12, "new": true, "views": 24, "Solde_Out": true}
     },
     {
       "id": 18,
@@ -211,10 +259,11 @@
       "price": 349.99,
       "tags": ["contemporary", "plastic", "sofa"],
       "colors": ["white", "gray"],
-      "imageUrl": "img/furniture/18.jpg",
+      "imgmain": "img/MainImg/Contemporary Plastic Outdoor Sofa.jpg",
+      "imgs":["img/MainImg/Contemporary Plastic Outdoor Sofa-2.jpg","img/MainImg/Contemporary Plastic Outdoor Sofa-3.jpg"],
       "rating": 4.0,
       "countRating": 8,
-      "SalesInfo": {"sells_count": 6, "new": false, "views": 15, "Solde_Out": false}
+      "SalesInfo": {"sells_count": 6, "new": false, "views": 15, "Solde_Out": true}
     },
     {
       "id": 19,
@@ -223,7 +272,8 @@
       "price": 249.99,
       "tags": ["stylish", "wooden"],
       "colors": ["black", "espresso", "white"],
-      "imageUrl": "img/furniture/19.jpg",
+      "imgmain": "img/MainImg/Stylish Wooden Writing Desk.jpg",
+      "imgs":[],
       "rating": 4.5,
       "countRating": 16,
       "SalesInfo": {"sells_count": 14, "new": true, "views": 28, "Solde_Out": false}
@@ -235,10 +285,11 @@
       "price": 79.99,
       "tags": ["plastic"],
       "colors": ["black", "white"],
-      "imageUrl": "img/furniture/20.jpg",
+      "imgmain": "img/MainImg/Plastic Bar Height Stool.jpg",
+      "imgs":["img/MainImg/Plastic Bar Height Stool-2.jpg"],
       "rating": 4.2,
       "countRating": 10,
-      "SalesInfo": {"sells_count": 8, "new": false, "views": 18, "Solde_Out": false}
+      "SalesInfo": {"sells_count": 8, "new": false, "views": 18, "Solde_Out": true}
     }
   ]
 }
