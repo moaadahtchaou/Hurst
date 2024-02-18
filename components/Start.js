@@ -23,7 +23,7 @@ export const GetAllScripts= ()=>{
 
 
 
-export const addToCart=(info,Quantity)=>{
+export const addToCart=(info,Quantity,path="")=>{
     //Get Product From Cart
     let Cart=JSON.parse(localStorage.getItem("productscart"))
     //Check if there is A Cart 
@@ -45,7 +45,15 @@ export const addToCart=(info,Quantity)=>{
     else{
             //product already in Cart we need to add Quantity
             console.log("this is a old")
-            let newproduct={"product":info,"Quantity":currentproduct.Quantity+Quantity}
+            let newproduct
+            if(path="Cart"){
+                //This is specific for Cart.html
+                newproduct={"product":info,"Quantity":Quantity}
+            }
+            else{
+                // //This is default
+                newproduct={"product":info,"Quantity":currentproduct.Quantity+Quantity}
+            }
             //Crate New array without product
             NewproductsCart=Oldsproducts.slice().filter((ProductInfo)=>{ return ProductInfo.product.id!==info.id})
             //Add product with new quantity to Cart
@@ -159,7 +167,7 @@ const AddHtmlCart = (ProductsInfo)=>{
     </div>
     <div class="cart-bottom  clearfix">
         <a href="cart.html" class="button-one floatleft text-uppercase" data-text="View cart">View cart</a>
-        <a href="checkout.html" class="button-one floatright text-uppercase" data-text="Check out">Check out</a>
+        <a href="cart.html" class="button-one floatright text-uppercase" data-text="Check out">Check out</a>
     </div>`
         miniCart.innerHTML=FullHtml
         //Add button remove to each product
@@ -257,7 +265,7 @@ export const AddWishlist=(product)=>{
 
 }
 //Remove product From wishlist
-const Removewishlist=(product)=>{
+export const Removewishlist=(product)=>{
     const OldWishlist=JSON.parse(localStorage.getItem("Wishlist"))
     const NewWishlist=OldWishlist.slice().filter(prod=> prod.id!==product.id)
     // console.log(NewWishlist)
