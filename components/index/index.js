@@ -1,8 +1,6 @@
 import  {GetAllProducts,addToCart,RefreshCart,CreateModal,name,AddWishlist,RefreshButtonswishlist} from "../Start.js"
 import {Createswiper,CreateDiscountSwiper} from"../Slider/slider.js"
 
-//Refresh Cart
-RefreshCart()
 // Add style For Minus Plus button
 const file=location.pathname.split("/")
 file.pop()
@@ -222,7 +220,8 @@ GetAllProducts().then((products=[])=>{
             let id=parseInt(quick.getAttribute("id"))
             quick.addEventListener("click" ,()=>{CreateModal(products.filter((product)=> product.id ===id)[0])} )
         })
-
+        //Refresh Cart
+        RefreshCart()
         //Refresh Favorite
         RefreshButtonswishlist()
 

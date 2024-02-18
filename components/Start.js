@@ -59,7 +59,7 @@ export const addToCart=(info,Quantity)=>{
     RefreshCart()
 }
 
-const RemoveFromCart = (id)=>{
+export const RemoveFromCart = (id)=>{
     //Get Product From Cart
     let Cart=JSON.parse(localStorage.getItem("productscart"))||[]
     // console.log(Cart)
@@ -305,9 +305,10 @@ export const RefreshButtonswishlist=()=>{
 
 
 // Function for Name
-export function name(x){
-            if (x.length > 20) {
-                const lastSpaceIndex = x.substring(0, 22).lastIndexOf(' ')
+export function name(x,num=22){
+    console.log(num)
+            if (x.length > num) {
+                const lastSpaceIndex = x.substring(0, num).lastIndexOf(' ')
                 return x.substring(0, lastSpaceIndex) + '...';
             }
             else {

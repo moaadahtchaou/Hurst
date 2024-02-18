@@ -1,7 +1,6 @@
 import  {GetAllProducts,RefreshCart,addToCart,CreateModal,AddWishlist,RefreshButtonswishlist} from "../Start.js"
 
-//Refresh Cart
-RefreshCart()
+
 
 // Add style For Minus Plus button
 const file=location.pathname.split("/")
@@ -55,12 +54,12 @@ GetAllProducts().then((products=[])=>{
     //Add Event Listener To Quick view Button 
     let Quick=document.querySelector("a[title='Quick View']")
     Quick.addEventListener("click" ,()=>{CreateModal(product)} )
-    //RefreshButtonswishlist
-    RefreshButtonswishlist()
     //Edit Tap panels
     Tappanel(product)
-
-
+    //Refresh Cart
+    RefreshCart()
+    //RefreshButtonswishlist
+    RefreshButtonswishlist()
 })
 
 

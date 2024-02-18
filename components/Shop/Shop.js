@@ -1,6 +1,4 @@
 import {GetAllProducts,RefreshCart,addToCart,CreateModal,name,RefreshButtonswishlist,AddWishlist} from "../Start.js"
-//Refresh Cart
-RefreshCart()
 //filter
 let filter={"Categories":[],"Price":[],"Color":[]}
 // Add style For Minus Plus button
@@ -185,6 +183,8 @@ const Pagination = (products,numpage)=>{
         let id=parseInt(quick.getAttribute("id"))
         quick.addEventListener("click" ,()=>{CreateModal(products.filter((product)=> product.id ===id)[0])} )
     })
+    //Refresh Cart
+    RefreshCart()
     //Refresh Favorite
     RefreshButtonswishlist()
 
