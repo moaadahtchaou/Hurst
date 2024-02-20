@@ -15,7 +15,7 @@ const ShoppingCart=()=>{
                     <a href="single-product.html?${prod.product.id}" title="${prod.product.name}"><img src="${prod.product.imgmain}" alt=""></a>
                 </div>
                 <div class="product-info">
-                    <h4 class="post-title"><a class="text-light-black" href="single-product.html?${prod.product.id}">${name(prod.product.name,26)}</a></h4>
+                    <h4 class="post-title"><a class="text-light-black" href="single-product.html?${prod.product.id}">${name(prod.product.name,25)}</a></h4>
                 </div>
             </div>
             <!-- Single-product end -->												
