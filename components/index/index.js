@@ -40,7 +40,9 @@ GetAllProducts().then((products=[])=>{
             else{
                 Edit.querySelector(".slider-title2").textContent="$ "+product.price
             }
+            Edit.querySelector(".slider-title2").classList.add("custom")
             //Set Descriptio
+            Edit.querySelector(".slider-pro-brief").classList.add("custom")
             Edit.querySelector(".slider-pro-brief").textContent=product.description
             //Set Shop but
             Edit.querySelector("a[data-text='Shop now']").href=`single-product.html?${product.id}`
@@ -300,7 +302,7 @@ const CreateSlider_Discount=(Disc)=>{
                             </div>
                             <div class="discount-info">
                                 <h1 class="text-dark-red d-none d-md-block">Discount ${product.SalesInfo.Discount}</h1>
-                                <p class="d-none d-md-block">${product.description}</p>
+                                <p class="d-none d-md-block custom">${product.description}</p>
                                 <a href="single-product.html?${product.id}" class="button-one font-16px style-3 text-uppercase mt-md-5" data-text="Buy now" tabindex="0">Buy now</a>
                             </div>
                         </div>
