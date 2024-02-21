@@ -1,6 +1,6 @@
 import  {GetAllProducts,addToCart,RefreshCart,CreateModal,name,AddWishlist,RefreshButtonswishlist} from "../Start.js"
 import {Createswiper,CreateDiscountSwiper} from"../Slider/slider.js"
-
+console.log(location.href)
 // Add style For Minus Plus button
 const file=location.pathname.split("/")
 file.pop()
