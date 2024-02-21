@@ -1,5 +1,16 @@
 //Mouad -- 
 
+export function extractDomain(url) {
+    // Removing the protocol (http://, https://, etc.)
+    const domainWithoutProtocol = url.replace(/^https?:\/\//, '');
+  
+    // Splitting the URL by slashes and taking the first part (domain)
+    const domainParts = domainWithoutProtocol.split('/');
+    const domain = domainParts[0];
+  
+    return domain;
+  }
+
 export const GetAllProducts = async (types="") => { 
     console.log("Fetch..")
     const Data = await fetch("./products.json").then((result=>result.json()))
