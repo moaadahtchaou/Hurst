@@ -1,10 +1,20 @@
-import {GetAllProducts,RefreshCart,addToCart,CreateModal,name,RefreshButtonswishlist,AddWishlist} from "../Start.js"
+import {extractDomain,GetAllProducts,RefreshCart,addToCart,CreateModal,name,RefreshButtonswishlist,AddWishlist} from "../Start.js"
 //filter
 let filter={"Categories":[],"Price":[],"Color":[]}
 // Add style For Minus Plus button
+const Domain= extractDomain(location.href)==="furniture-iota-nine.vercel.app"? "Vercel":"Html"
+
 const file=location.pathname.split("/")
 file.pop()
-let pathcss="/"+file.join("")+"/components/Shop/styles.css"
+let pathcss=""
+if(Domain==="Vercel"){
+
+    pathcss=file.join("")+"/components/Shop/styles.css"
+}
+else{
+    pathcss="/"+file.join("")+"/components/Shop/styles.css"
+
+}
 var link = document.createElement( "link" );
 link.href = pathcss
 link.type = "text/css";

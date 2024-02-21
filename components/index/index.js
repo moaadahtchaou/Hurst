@@ -1,6 +1,6 @@
 import  {extractDomain,GetAllProducts,addToCart,RefreshCart,CreateModal,name,AddWishlist,RefreshButtonswishlist} from "../Start.js"
 import {Createswiper,CreateDiscountSwiper} from"../Slider/slider.js"
-const Domain= extractDomain(location.href)? "Vercel":"Html"
+const Domain= extractDomain(location.href)==="furniture-iota-nine.vercel.app"? "Vercel":"Html"
 
 
 // Add style For Minus Plus button

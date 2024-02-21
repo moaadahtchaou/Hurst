@@ -1,7 +1,19 @@
+import  {extractDomain} from "../Start.js"
+
 // Add style For slideBar Index Page
+const Domain= extractDomain(location.href)==="furniture-iota-nine.vercel.app"? "Vercel":"Html"
+
 const file=location.pathname.split("/")
 file.pop()
-let pathcss="/"+file.join("")+"/components/Slider/styles.css"
+let pathcss=""
+if(Domain==="Vercel"){
+
+    pathcss=file.join("")+"/components/Slider/styles.css"
+}
+else{
+    pathcss="/"+file.join("")+"/components/Slider/styles.css"
+
+}
 var link = document.createElement( "link" );
 link.href = pathcss
 link.type = "text/css";
