@@ -9,7 +9,7 @@ file.pop()
 let pathcss=""
 if(Domain==="Vercel"){
 
-    pathcss="/furniture.vercel.app"+file.join("")+"/components/index/styles.css"
+    pathcss=file.join("")+"/components/index/styles.css"
 }
 else{
     pathcss="/"+file.join("")+"/components/index/styles.css"
