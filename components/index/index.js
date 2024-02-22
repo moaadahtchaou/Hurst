@@ -92,7 +92,7 @@ GetAllProducts().then((products=[])=>{
                 const Banner1=Banner[product.NumBanner-1]
                 //Price
                 Banner1.querySelector(".price").textContent="$"+product.price
-                Banner1.querySelector(".price").style.cssText = `color: ${product.TextColor}; line-height: 1.1; /* add more styles as needed */`;
+                Banner1.querySelector(".price").style.cssText = `color: ${product.TextColor}; /* add more styles as needed */`;
                 //Title
                 Banner1.querySelector(".banner-title a").textContent=product.name
                 Banner1.querySelector(".banner-title a").style.color = product.TextColor;
@@ -113,10 +113,12 @@ GetAllProducts().then((products=[])=>{
                 const Banner2=Banner[product.NumBanner-1]
                  //Title
                 Banner2.querySelector(".banner-title a").textContent=product.name
-                Banner2.querySelector(".banner-title a").style.color = product.TextColor;
+                Banner2.querySelector(".price").style.cssText = `color: ${product.TextColor}; line-height: 1.2; /* add more styles as needed */`;
+
                 //Description
                 Banner2.querySelector(".hidden-md.hidden-sm.d-none.d-md-block").textContent=product.description
-                Banner2.querySelector(".hidden-md.hidden-sm.d-none.d-md-block").style.color = product.TextColor;
+                Banner2.querySelector(".hidden-md.hidden-sm.d-none.d-md-block").style.cssText = `color: ${product.TextColor}; line-height: 1.3; /* add more styles as needed */`;
+
                 //Btn Buy now
                 Banner2.querySelector("a[data-text='Buy now']").href=`single-product.html?${product.id}`
             }
