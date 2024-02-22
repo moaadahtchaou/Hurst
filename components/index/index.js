@@ -92,7 +92,7 @@ GetAllProducts().then((products=[])=>{
                 const Banner1=Banner[product.NumBanner-1]
                 //Price
                 Banner1.querySelector(".price").textContent="$"+product.price
-                Banner1.querySelector(".price").style.color = product.TextColor; 
+                Banner1.querySelector(".price").style.cssText = `color: ${product.TextColor}; line-height: 1.1; /* add more styles as needed */`;
                 //Title
                 Banner1.querySelector(".banner-title a").textContent=product.name
                 Banner1.querySelector(".banner-title a").style.color = product.TextColor;
